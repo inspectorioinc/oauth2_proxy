@@ -1,4 +1,5 @@
 # Dockerizing
+Docker image of oauth2_proxy [fork](https://github.com/outlook/oauth2_proxy) that supports Azure AD groups
 
 ## Motivation
 Use the Azure AD groups feature before its implemented in the [official](https://github.com/pusher/oauth2_proxy) oauth2_proxy project
