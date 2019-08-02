@@ -1,6 +1,6 @@
 VERSION_FILE = VERSION
 
-VERSION = $(shell cat version.go | grep "const VERSION" | awk '{print $$NF}' | sed 's/"//g')
+VERSION = $(shell cat version.go | grep "const VERSION" | awk '{print "v" $$NF}' | sed 's/"//g')
 
 ifeq ($(VERSION),)
 $(error VERSION is not set)
