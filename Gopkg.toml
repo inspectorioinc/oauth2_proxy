@@ -2,6 +2,10 @@
 # Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
 # for detailed Gopkg.toml documentation.
 #
+[[override]]
+  name = "github.com/bitly/oauth2_proxy"
+  branch = "master"
+  source = "github.com/inspectorioinc/oauth2_proxy"
 
 [[override]]
   name = "github.com/18F/hmacauth"
