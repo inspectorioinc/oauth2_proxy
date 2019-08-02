@@ -8,7 +8,7 @@ endif
 
 
 DOCKER_REPOSITORY = inspectorio
-CONTAINER_NAME = outlook-oauth2-proxy
+CONTAINER_NAME = oauth2-proxy
 
 .PHONY: build push
 
