@@ -159,9 +159,9 @@ The Azure AD auth provider uses `openid` as it default scope. It uses `https://g
 
 The Azure provider supports passing (optionally filtered) group membership information, as well as doing basic authorization checking based on group membership.
 
-Set the `pass-groups` flag to enable an additional X-Forwarded-Groups header that contains a pipe-separated list of groups to which the user belongs.
+Set the `pass-groups` and `pass-access-token` flags to enable an additional X-Forwarded-Groups header that contains a pipe-separated list of groups to which the user belongs.
 
-The `filter-groups` flag enables a simple filter that will elide any groups that do not contain that string. For example, if the `filter-groups` flag were set to `admins`, the X-Forwarded-Groups header for a user in groups `[foo-admins, bar-admins, users-foo-group]` would be `foo-admins|bar-admins`. If the flag were set to `foo`, the header would be `foo-admins|users-foo-group`.
+The `filter-groups` flag enables a simple filter that will elide any groups that do not contain that string. For example, if the `filter-groups` flag were set to `admins`, the X-Forwarded-Groups header for a user in groups `[foo-admins, bar-admins, users-foo-group]` would be `foo-admins|bar-admins`. If the flag were set to `foo`, the header would be `foo-admins|users-foo-group`.(NOT YET IMPLEMENTED)
 
 The `permit-groups` flag requires that a user belong to a group that contains the specified string (or one of the specified strings). The X-Forwarded-Group header is checked for a `strings.Contains` match for each item in the list.
 
@@ -230,7 +230,7 @@ Usage of oauth2_proxy:
   -http-address string: [http://]<addr>:<port> or unix://<path> to listen on for HTTP clients (default "127.0.0.1:4180")
   -https-address string: <addr>:<port> to listen on for HTTPS clients (default ":443")
   -login-url string: Authentication endpoint
-  -pass-access-token: pass OAuth access_token to upstream via X-Forwarded-Access-Token header (default false)
+  -pass-access-token: pass OAuth access_token to upstream via X-Forwarded-Access-Token and X-Forwarded-Groups header (default false)
   -pass-basic-auth: pass HTTP Basic Auth, X-Forwarded-User and X-Forwarded-Email information to upstream (default true)
   -pass-host-header: pass the request Host Header to upstream (default true)
   -pass-user-headers: pass X-Forwarded-User and X-Forwarded-Email information to upstream (default true)
